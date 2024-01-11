@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+body{
+    line-height: 1.6;
+}
+
+h1{
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin: 40px 0 60px 0;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+#Search-Input{
+    width: 60%;
+    max-width: 400px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 18p;
+    color: #333;
+}
+
+#Search-Btn{
+    max-width: 400px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 18p;
+    color: #333;
+    margin-left: 11px;
+    background-color: burlywood;
+}
+
+/*flex for multiple in rows?*/
+.Search-Results { /*makes the column*/
+    display: flex; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.S-Result{
+    margin-bottom: 60px;
+    width: 30%; /*makes the number of rows, 50% gives 2 rows*/
+    height: 100%; /*200px*/
+    border-radius: 5px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    overflow:hidden;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.S-Result img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: opacity 0.2s ease-in-out;
+    
+}
+
+.S-Result:hover img{
+    opacity: 0.8; /*on hover to have an effect*/
+}
+
+.S-Result a{
+    font-size: 20px;
+    text-decoration: none; /*preventing lines*/
+    color: #333;
+    display: block;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+#show-more-btn{
+    max-width: 400px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 9px;
+    font-size: 18p;
+    color: #333;
+    background-color: burlywood;
+    text-align: left;
+    display: block;
+    margin: 30px auto; /*this type of margin is up and down, the second is left and right*/
+    display: none;
+}
+
+#back-btn{
+    max-width: 400px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 18p;
+    color: #333;
+    margin-right: 11px;
+    background-color: burlywood;
+    display: none;
+}
+
+@media screen and (max-width: 768px) { /*for small/phone screens*/
+    .Search-Results{ /*remember this is the screen method so padding was for the screen*/
+        padding: 30px;
+    }
+
+    .S-Result{ /*targeting the div we want to change when screen size changes*/
+        width: 45%;
+        
+    }
+}
+
+@media screen and (max-width: 480px) { /*even smaller screen*/
+    .S-Result{ /*turns into one row*/
+        width: 100%;
+        
+    }
+}
